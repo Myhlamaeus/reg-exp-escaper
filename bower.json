@@ -1,0 +1,20 @@
+{
+  "name": "reg-exp-escaper",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ileri/reg-exp-escaper",
+  "authors": [
+    "Malte-Maurice Dreyer <dreyer.maltem@gmail.com>"
+  ],
+  "main": "reg-exp-escaper.es",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
