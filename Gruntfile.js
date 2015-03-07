@@ -24,6 +24,26 @@ module.exports = function (grunt) {
             "main": "reg-exp-escaper",
             "global": "regExpEscaper"
         },
+        "watch": {
+            "js": {
+                "files": [
+                    "<%= config.main %>.js",
+                    "tags.js"
+                ],
+                "tasks": ["jshint"]
+            }
+        },
+        "jshint": {
+            "options": {
+                "jshintrc": ".jshintrc",
+                "reporter": require("jshint-stylish")
+            },
+            "all": [
+                "Gruntfile.js",
+                "<%= config.main %>.js",
+                "tags.js"
+            ]
+        },
         "babel": {
             "options": {
                 "sourceMap": true
@@ -67,6 +87,8 @@ module.exports = function (grunt) {
             }
         }
     });
+
+    grunt.task.registerTask("test", ["jshint:all"]);
 
     grunt.task.registerTask("build:es6", ["uglify:dist"]);
     grunt.task.registerTask("build:cjs", ["babel:dist", "uglify:distCjs"]);
